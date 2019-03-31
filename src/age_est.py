@@ -40,5 +40,13 @@ def main(argv):
     print("Estimated Age : %.1f" % estimated_age.data.cpu().numpy()[0][0])
     return
 
+def main_call_in_python(image_path):
+
+    image_feats = get_feats(image_path)
+
+    model = get_model()
+    estimated_age = model(Variable(torch.from_numpy(image_feats).float()))
+    return estimated_age.data.cpu().numpy()[0][0]
+
 if __name__ == '__main__':
     main(sys.argv[1:])
