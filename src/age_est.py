@@ -40,7 +40,7 @@ def main(argv):
     print("Estimated Age : %.1f" % estimated_age.data.cpu().numpy()[0][0])
     return
 
-def main_call_in_python(image_path):
+def estimate_age_from_image(image_path):
 
     image_feats = get_feats(image_path)
 
